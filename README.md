@@ -47,3 +47,5 @@ fish
 in `~/.config/Code/User/settings.json`
 
     "terminal.integrated.shell.linux": "/home/vadim/anaconda3/bin/fish",
+    "terminal.integrated.shell.osx": "fish",
+
