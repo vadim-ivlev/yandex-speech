@@ -16,16 +16,17 @@ def get_name(num, txt):
     s = s.strip()
     if s == "":
         return ""
-    s = re.sub(r"[\s!,\"'].","_",s, flags=re.MULTILINE)
+    s = re.sub(r"[\s!,\"']+","_",s, flags=re.MULTILINE)
     return "{:0>3d} {}.ogg".format(num, s)
 
 
 def save_sound_to_file(txt, file_name):
-    # s = re.sub(r'[\s\n\r].',' ',txt, flags=re.MULTILINE )
-    s = re.sub(r'\s.',' ',txt, flags=re.MULTILINE )
+    s = re.sub(r'\s+',' ',txt, flags=re.MULTILINE )
     s = s.strip()
     s = s+"."
+    print("-------------------------------")
     print(s)
+    print("-------------------------------")
 
     iam_token = os.environ.get('IAM_TOKEN')
     url = "https://tts.api.cloud.yandex.net/speech/v1/tts:synthesize"
